@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
-  <body onload="loadResults()">
+  <body onload="loadData(populateResults)">
     <div class="container">
       <h1 class="title bold">Results</h1>
       <!-- results -->
@@ -23,10 +23,9 @@
       </ul>
     </div>
 
-    <p id="results">empty</p>
-
     <!-- scripts -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./main.js"></script>
     <script src="./results.js"></script>
   </body>
 </html>
