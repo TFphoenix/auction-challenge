@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "User1",
+      "level": 1,
+      "start": "00:04:10",
+      "end": null
+    },
+    {
+      "name": "User2",
+      "level": 1,
+      "start": "00:04:10",
+      "end": null
+    },
+    {
+      "name": "User3",
+      "level": 1,
+      "start": "00:04:10",
+      "end": null
+    }
+  ]
+}
