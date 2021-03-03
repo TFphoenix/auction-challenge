@@ -6,7 +6,9 @@ function loadData(callbackFunction) {
     request.onload = function (e) {
         if (request.readyState === 4) {
             if (request.status === 200) {
-                callbackFunction(request.responseText);
+                // load JSON
+                const data = JSON.parse(request.responseText);
+                callbackFunction(data);
             } else {
                 console.error(request.statusText);
             }
@@ -18,4 +20,12 @@ function loadData(callbackFunction) {
     };
 
     request.send(null);
+}
+
+function setUser(nickname) {
+    window.localStorage.setItem('user', nickname);
+}
+
+function getUser() {
+    return window.localStorage.getItem('user');
 }

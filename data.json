@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "User1",
-      "level": 1,
+      "level": 2,
       "start": "00:04:10",
       "end": null
     },
@@ -10,7 +10,7 @@
       "name": "User2",
       "level": 1,
       "start": "00:04:10",
-      "end": null
+      "end": "00:10:12"
     },
     {
       "name": "User3",

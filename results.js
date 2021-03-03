@@ -1,7 +1,4 @@
-function populateResults(text) {
-    // load JSON
-    const data = JSON.parse(text);
-
+function populateResults(data) {
     // pre-process results
     let results = [];
     let index = 0;
