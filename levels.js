@@ -1,16 +1,29 @@
 var nickname;
 
-function loadNickname() {
+function main(data) {
+    loadNickname(data);
+}
+
+function loadNickname(data) {
     nickname = getUser();
 
     if (nickname === null) {
         nickname = getUrlParam('nickname');
-        //TODO: Add user to JSON data
-    }
 
-    if (nickname === null) {
-        alert('ERROR: Can\'t get your nickname');
-        window.location.href = "./index.html";
+        if (nickname === null) {
+            alert('ERROR: Can\'t get your nickname');
+            window.location.href = "./index.html";
+        }
+
+        const user = {
+            name: nickname,
+            level: 1,
+            start: now(),
+            end: null
+        }
+        data.users.push(user);
+        writeData(data);
+        setUser(nickname);
     }
 }
 

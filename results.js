@@ -28,25 +28,3 @@ function populateResults(data) {
 
     document.querySelector('#results-list').innerHTML = resultsHTML;
 }
-
-function seconds(hms) {
-    const a = hms.split(':'); // split it at the colons
-
-    // minutes are worth 60 seconds. Hours are worth 60 minutes.
-    const seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
-
-    return seconds;
-}
-
-function hms(seconds) {
-    return new Date(seconds * 1000).toISOString().substr(11, 8)
-}
-
-function now() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-
-    return `${h}:${m}:${s}`;
-}
