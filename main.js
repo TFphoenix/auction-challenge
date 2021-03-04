@@ -1,4 +1,6 @@
-const dataFile = "./data.json";
+const dataFile = './data.json';
+const dataBin = 'https://api.jsonbin.io/v3/b/60403e1f9342196a6a6d103a'
+const apiKey = '$2b$10$jZ2Uezy4S.bwoP8hGpGdkOVhQRqwBL/mYGKXxNEyU6ERu.3jNw5fC'
 
 function loadData(callbackFunction) {
     let request = new XMLHttpRequest();
@@ -25,12 +27,20 @@ function loadData(callbackFunction) {
 
 function writeData(data) {
     dataString = JSON.stringify(data);
+    console.log(dataString);
 
-    let request = new XMLHttpRequest();
+    let req = new XMLHttpRequest();
 
-    request.open("POST", dataFile, true);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.send(data);
+    req.onreadystatechange = () => {
+        if (req.readyState == XMLHttpRequest.DONE) {
+            console.log(req.responseText);
+        }
+    };
+
+    req.open('PUT', dataBin, true);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.setRequestHeader("X-Master-Key", apiKey);
+    req.send(dataString);
 }
 
 function setUser(nickname) {
