@@ -58,7 +58,13 @@ function submitLevel() {
             results = checkLevel(['A,17', 'Q,104', 'T,71', 'A,100', 'C,159']);
             break;
         case 3:
-            results = checkLevel([]);
+            results = checkLevel([
+                '-,1,A,1,B,6,B,9,A,11,A,17',
+                '-,100,A,100',
+                '-,100,C,100,G,158,C,159',
+                '-,1,N,1,H,16,P,25,M,31,H,32,T,56,F,58,E,60,P,62,E,66,E,70,E,72,F,75,F,78,O,79,H,96,Q,104',
+                '-,15,U,15',
+                '-,1,R,1,A,51,D,2001,E,3559,K,4000,Y,5000,Y,5001,Y,6001,Y,7001,Y,8001,L,8333,Y,9000,Z,10000,I,11001,N,11111,N,12568,N,12668,T,13000,G,13001,M,14001,H,15000,N,15401,D,17001,T,18501,U,18751,Q,18851,D,19000,S,19050']);
             break;
         case 4:
             results = checkLevel([]);
@@ -67,6 +73,11 @@ function submitLevel() {
             console.error('BAD LEVEL CHECK');
             return;
     }
+
+    //     TODO
+    // - download pdfs
+    // - copy on button
+    // - block navigation on inferior/superior levels
 
     // display checks
     let allCorrect = true;
@@ -107,4 +118,25 @@ function checkLevel(solutions) {
     }
 
     return results;
+}
+
+function copyInput(btn) {
+    const index = btn.id.split('-')[2];
+    var copyText = document.querySelectorAll(".lvl-input")[index - 1].innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = copyText;
+    elem.select();
+    elem.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+
+    var tooltip = document.getElementById(`tooltip-${index}`);
+    tooltip.innerText = "Copied!";
+}
+
+function copyInputOut(btn) {
+    const index = btn.id.split('-')[2];
+    var tooltip = document.getElementById(`tooltip-${index}`);
+    tooltip.innerText = "Copy to clipboard";
 }

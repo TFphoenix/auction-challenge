@@ -12,68 +12,90 @@
   <body onload="loadData(main)">
     <div class="container">
       <h1 class="title-up">Level 1</h1>
+      <p id="level" hidden>1</p>
 
       <!-- lvl -->
       <form class="lvl-form border" action="#">
         <!-- stage 1 -->
         <div class="lvl-stage">
-          <p class="lvl-input">1,A,5,B,10,A,8,A,14,A,17,B,17</p>
+          <button
+            id="copy-btn-1"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-1" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-1">Copy Input</div>
+          <p class="lvl-input">1,A,5,B,10,A,8,A,17,B,17</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
             <div class="lvl-output mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="sample1" />
-              <label class="mdl-textfield__label" for="sample1">Output...</label>
+              <input class="mdl-textfield__input" type="text" id="lvl-output-1" />
+              <label class="mdl-textfield__label" for="lvl-output-1">Output...</label>
             </div>
           </div>
         </div>
         <!-- stage 2 -->
         <div class="lvl-stage">
           <p class="lvl-input">
-            1,N,15,H,24,P,30,M,31,H,49,H,55,T,57,F,59,E,61,P,64,P,65,E,74,P,69,P,71,F,78,H,78,O,95,H,103,Q,135
+            1,N,15,H,24,P,30,M,31,H,49,T,57,F,59,E,61,P,64,E,74,P,69,P,71,F,78,H,78,O,95,H,103,Q,135
           </p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
             <div class="lvl-output mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="sample1" />
-              <label class="mdl-textfield__label" for="sample1">Output...</label>
+              <input class="mdl-textfield__input" type="text" id="lvl-output-2" />
+              <label class="mdl-textfield__label" for="lvl-output-2">Output...</label>
             </div>
           </div>
         </div>
         <!-- stage 3 -->
         <div class="lvl-stage">
-          <p class="lvl-input">1,A,5,B,10,A,8,A,14,A,17,B,17</p>
+          <p class="lvl-input">1,C,5,E,10,K,19,O,14,O,23,X,24,Y,25,A,26</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
             <div class="lvl-output mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="sample1" />
-              <label class="mdl-textfield__label" for="sample1">Output...</label>
+              <input class="mdl-textfield__input" type="text" id="lvl-output-3" />
+              <label class="mdl-textfield__label" for="lvl-output-3">Output...</label>
             </div>
           </div>
         </div>
         <!-- stage 4 -->
         <div class="lvl-stage">
-          <p class="lvl-input">1,A,5,B,10,A,8,A,14,A,17,B,17</p>
+          <p class="lvl-input">1,C,5,E,10,K,19,O,23,X,24,Y,29,A,26</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
             <div class="lvl-output mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="sample1" />
-              <label class="mdl-textfield__label" for="sample1">Output...</label>
+              <input class="mdl-textfield__input" type="text" id="lvl-output-4" />
+              <label class="mdl-textfield__label" for="lvl-output-4">Output...</label>
             </div>
           </div>
         </div>
         <!-- stage 5 -->
         <div class="lvl-stage">
-          <p class="lvl-input">1,A,5,B,10,A,8,A,14,A,17,B,17</p>
+          <p class="lvl-input">15,U,17,N,16,S,25,T,75,H,35,U,60,U,70</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
             <div class="lvl-output mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="sample1" />
-              <label class="mdl-textfield__label" for="sample1">Output...</label>
+              <input class="mdl-textfield__input" type="text" id="lvl-output-5" />
+              <label class="mdl-textfield__label" for="lvl-output-5">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 6 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">15,U,15</p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="lvl-output-6" />
+              <label class="mdl-textfield__label" for="lvl-output-6">Output...</label>
             </div>
           </div>
         </div>
@@ -89,7 +111,7 @@
           <span>Results</span>
         </a>
         <button
-          onclick="submitLevel(1)"
+          onclick="submitLevel()"
           class="big-button m-16 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
         >
           <i class="material-icons">assignment_turned_in</i>

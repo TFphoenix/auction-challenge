@@ -19,8 +19,10 @@ function loadUserSession(data) {
 
     // existing user
     const user = data.users.filter(user => {
-        return user.name === userNickname
+        return user.name === userNickname;
     })[0];
+
+    if (user.end !== null) window.location.href = "./results.html";
 
     switch (user.level) {
         case 1:

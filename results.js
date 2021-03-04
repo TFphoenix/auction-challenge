@@ -1,3 +1,22 @@
+function main(data) {
+    checkIfFinalized(data);
+    populateResults(data);
+}
+
+function checkIfFinalized(data) {
+    let end = getUrlParam('end');
+
+    if (end !== null) {
+        const nickname = getUser();
+
+        for (let i = 0; i < data.users.length; i++) {
+            if (data.users[i] === nickname) {
+                data.users[i].end = end;
+            }
+        }
+    }
+}
+
 function populateResults(data) {
     // pre-process results
     let results = [];
