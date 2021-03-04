@@ -3,26 +3,18 @@ const dataBin = 'https://api.jsonbin.io/v3/b/60403e1f9342196a6a6d103a'
 const apiKey = '$2b$10$jZ2Uezy4S.bwoP8hGpGdkOVhQRqwBL/mYGKXxNEyU6ERu.3jNw5fC'
 
 function loadData(callbackFunction) {
-    let request = new XMLHttpRequest();
-    request.open("GET", dataFile, true);
+    let req = new XMLHttpRequest();
 
-    request.onload = function (e) {
-        if (request.readyState === 4) {
-            if (request.status === 200) {
-                // load JSON
-                const data = JSON.parse(request.responseText);
-                callbackFunction(data);
-            } else {
-                console.error(request.statusText);
-            }
+    req.onreadystatechange = () => {
+        if (req.readyState == XMLHttpRequest.DONE) {
+            const data = JSON.parse(req.responseText);
+            callbackFunction(data.record);
         }
     };
 
-    request.onerror = function (e) {
-        console.error(request.statusText);
-    };
-
-    request.send(null);
+    req.open("GET", `${dataBin}/latest`, true);
+    req.setRequestHeader("X-Master-Key", apiKey);
+    req.send();
 }
 
 function writeData(data) {
