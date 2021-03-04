@@ -24,21 +24,29 @@ function populateResults(data) {
     let results = [];
     let index = 0;
 
+    // sort results by level and duration
+    data.users.sort((u1, u2) => {
+        // bigger level
+        if (u1.level > u2.level) {
+            return 1;
+        }
+        // smaller level
+        else if (u1.level < u2.level) {
+            return -1;
+        }
+        // equal level
+        else {
+            return getUserDuration(u1) < getUserDuration(u2);
+        }
+    });
+    data.users.reverse();
+
     // process results
     data.users.forEach(user => {
-        let duration = '';
-        if (user.end === null) {
-            duration = hms(seconds(now()) - seconds(user.start));
-        }
-        else {
-            duration = hms(seconds(user.end) - seconds(user.start));
-        }
+        let duration = hms(getUserDuration(user));
 
         results[index++] = `<pre>${user.name}   🎯Level: ${user.level}   ⏳Duration: ${duration}   🏁Finished: ${user.end !== null ? 'yes' : 'no'}</pre>`;
     });
-
-    // sort results by duration
-    //TODO 
 
     // populate results
     let resultsHTML = '';
@@ -52,4 +60,12 @@ function populateResults(data) {
     });
 
     document.querySelector('#results-list').innerHTML = resultsHTML;
+}
+
+function getUserDuration(user) {
+    if (user.end === null) {
+        return seconds(now()) - seconds(user.start);
+    }
+
+    return seconds(user.end) - seconds(user.start);
 }
