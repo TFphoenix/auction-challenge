@@ -1,12 +1,17 @@
 var nickname;
 var level;
-
-//TODO: Display timer in upper corner
+var user;
 
 function main(data) {
     loadLevel();
     loadNickname(data);
     updateLevel(data);
+    setInterval(timer, 1000);
+}
+
+function timer() {
+    const duration = getUserDuration(user);
+    document.getElementById("timer").innerHTML = hms(duration);
 }
 
 function loadLevel() {
@@ -39,6 +44,9 @@ function loadNickname(data) {
 function updateLevel(data) {
     for (let i = 0; i < data.users.length; i++) {
         if (data.users[i].name === nickname) {
+            // set user
+            user = data.users[i];
+
             // if finished already
             if (data.users[i].end !== null) {
                 window.location.href = "./results.html";

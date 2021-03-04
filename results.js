@@ -61,11 +61,3 @@ function populateResults(data) {
 
     document.querySelector('#results-list').innerHTML = resultsHTML;
 }
-
-function getUserDuration(user) {
-    if (user.end === null) {
-        return seconds(now()) - seconds(user.start);
-    }
-
-    return seconds(user.end) - seconds(user.start);
-}

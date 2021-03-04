@@ -136,3 +136,10 @@ body {
 .check-off {
   display: none;
 }
+
+.timer-container {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  font-size: 32px;
+}
