@@ -121,10 +121,14 @@ body {
   align-items: center;
 }
 
-.lvl-results {
+.lvl-a-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lvl-a-btn i {
+  margin-right: 8px;
 }
 
 .check-off {

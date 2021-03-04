@@ -23,6 +23,8 @@ function populateResults(data) {
     // pre-process results
     let results = [];
     let index = 0;
+
+    // process results
     data.users.forEach(user => {
         let duration = '';
         if (user.end === null) {
@@ -35,6 +37,8 @@ function populateResults(data) {
         results[index++] = `<pre>${user.name}   🎯Level: ${user.level}   ⏳Duration: ${duration}   🏁Finished: ${user.end !== null ? 'yes' : 'no'}</pre>`;
     });
 
+    // sort results by duration
+    //TODO
 
     // populate results
     let resultsHTML = '';

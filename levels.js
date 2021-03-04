@@ -1,6 +1,8 @@
 var nickname;
 var level;
 
+//TODO: Display timer in upper corner
+
 function main(data) {
     loadLevel();
     loadNickname(data);
@@ -102,10 +104,6 @@ function submitLevel() {
             console.error('BAD LEVEL CHECK');
             return;
     }
-
-    //     TODO
-    // - download pdfs
-    // - block navigation on inferior/superior levels
 
     // display checks
     let allCorrect = true;

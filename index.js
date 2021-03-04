@@ -22,7 +22,10 @@ function loadUserSession(data) {
         return user.name === userNickname;
     })[0];
 
-    if (user.end !== null) window.location.href = "./results.html";
+    if (user.end !== null) {
+        window.location.href = "./results.html";
+        return;
+    }
 
     switch (user.level) {
         case 1:
