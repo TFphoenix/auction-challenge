@@ -67,7 +67,15 @@ function submitLevel() {
                 '-,1,R,1,A,51,D,2001,E,3559,K,4000,Y,5000,Y,5001,Y,6001,Y,7001,Y,8001,L,8333,Y,9000,Z,10000,I,11001,N,11111,N,12568,N,12668,T,13000,G,13001,M,14001,H,15000,N,15401,D,17001,T,18501,U,18751,Q,18851,D,19000,S,19050']);
             break;
         case 4:
-            results = checkLevel([]);
+            results = checkLevel([
+                '-,1,A,1,B,6,B,9,A,11,A,15',
+                '-,100,C,100,G,158,C,159',
+                '-,100,C,100,G,158,C,159',
+                '-,100,C,100,G,158,C,159',
+                '-,1,N,1,H,16,P,25,M,31,H,32,T,56,F,58,E,60,P,62,E,66,E,70,E,72,F,75,F,78,O,79,H,96,Q,104',
+                '-,1,A,1,A,6,A,11,A,16,C,18,C,21,C,26,H,29,L,42,H,43,H,44,L,45,L,48',
+                '-,1,A,1,A,6,A,11,A,16,C,18,C,21,C,26,H,29,Q,42,H,43,H,44,Q,45,Q,47'
+            ]);
             break;
         default:
             console.error('BAD LEVEL CHECK');
@@ -76,7 +84,6 @@ function submitLevel() {
 
     //     TODO
     // - download pdfs
-    // - copy on button
     // - block navigation on inferior/superior levels
 
     // display checks
@@ -113,7 +120,7 @@ function checkLevel(solutions) {
 
     let outputs = document.querySelectorAll('.lvl-output input');
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < solutions.length; i++) {
         results[i] = outputs[i].value === solutions[i];
     }
 

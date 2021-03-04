@@ -11,14 +11,23 @@
   </head>
   <body onload="loadData(main)">
     <div class="container">
-      <h1 class="title-up">Level 4</h1>
+      <h1>Level 4</h1>
       <p id="level" hidden>4</p>
 
       <!-- lvl -->
       <form class="lvl-form border" action="#">
         <!-- stage 1 -->
         <div class="lvl-stage">
-          <p class="lvl-input">XXXX</p>
+          <button
+            id="copy-btn-1"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-1" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-1">Copy Input</div>
+          <p class="lvl-input">1,15,A,5,B,10,A,8,A,17,B,17</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
@@ -30,7 +39,18 @@
         </div>
         <!-- stage 2 -->
         <div class="lvl-stage">
-          <p class="lvl-input">XXXX</p>
+          <button
+            id="copy-btn-2"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-2" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-2">Copy Input</div>
+          <p class="lvl-input">
+            100,0,C,100,C,115,C,119,C,121,C,144,C,154,C,157,G,158,C,171,C,179,C,194,C,206,C,214,C,227,C,229,C,231,C,298
+          </p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
@@ -42,7 +62,18 @@
         </div>
         <!-- stage 3 -->
         <div class="lvl-stage">
-          <p class="lvl-input">XXXX</p>
+          <button
+            id="copy-btn-3"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-3" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-3">Copy Input</div>
+          <p class="lvl-input">
+            100,325,C,100,C,115,C,119,C,121,C,144,C,154,C,157,G,158,C,171,C,179,C,194,C,206,C,214,C,227,C,229,C,231,C,298
+          </p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
@@ -54,7 +85,18 @@
         </div>
         <!-- stage 4 -->
         <div class="lvl-stage">
-          <p class="lvl-input">XXXX</p>
+          <button
+            id="copy-btn-4"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-4" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-4">Copy Input</div>
+          <p class="lvl-input">
+            100,160,C,100,C,115,C,119,C,121,C,144,C,154,C,157,G,158,C,171,C,179,C,194,C,206,C,214,C,227,C,229,C,231,C,298
+          </p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>
@@ -66,7 +108,60 @@
         </div>
         <!-- stage 5 -->
         <div class="lvl-stage">
-          <p class="lvl-input">XXXX</p>
+          <button
+            id="copy-btn-5"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-5" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-5">Copy Input</div>
+          <p class="lvl-input">
+            1,0,N,15,H,24,P,30,M,31,H,49,H,55,T,57,F,59,E,61,P,64,P,65,E,74,P,69,P,71,F,78,H,78,O,95,H,103,Q,135
+          </p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 6 -->
+        <div class="lvl-stage">
+          <button
+            id="copy-btn-6"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-6" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-6">Copy Input</div>
+          <p class="lvl-input">1,120,A,17,K,5,K,10,K,15,C,28,K,20,K,25,H,35,H,40,H,41,L,42,H,43,H,44,L,44,L,49,H,47</p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 7 -->
+        <div class="lvl-stage">
+          <button
+            id="copy-btn-7"
+            onclick="copyInput(this)"
+            onmouseout="copyInputOut(this)"
+            class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+          >
+            <i class="material-icons">content_copy</i>
+          </button>
+          <div id="tooltip-7" class="mdl-tooltip mdl-tooltip--large" data-mdl-for="copy-btn-7">Copy Input</div>
+          <p class="lvl-input">1,47,A,17,L,5,L,10,L,15,C,28,L,20,L,25,H,35,H,40,H,41,Q,42,H,43,H,44,Q,44,Q,49,H,47</p>
           <div class="lvl-output-wrapper">
             <i class="check-off lvl-correct material-icons">check_circle</i>
             <i class="check-off lvl-wrong material-icons">error</i>

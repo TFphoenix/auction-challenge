@@ -20,13 +20,13 @@ function loadData(callbackFunction) {
 
 function writeData(data) {
     dataString = JSON.stringify(data);
-    console.log(dataString);
+    // console.log(dataString);
 
     let req = new XMLHttpRequest();
 
     req.onreadystatechange = () => {
         if (req.readyState == XMLHttpRequest.DONE) {
-            console.log(req.responseText);//TODO: Remove
+            // console.log(req.responseText);//TODO: Remove
         }
     };
 
