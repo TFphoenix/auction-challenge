@@ -9,7 +9,100 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
-  <body>
+  <body onload="loadData(main)">
+    <div class="container">
+      <h1 class="title-up">Level 2</h1>
+      <p id="level" hidden>2</p>
+
+      <!-- lvl -->
+      <form class="lvl-form border" action="#">
+        <!-- stage 1 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">1,A,5,B,10,A,8,A,14,A,17,B,17</p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 2 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">
+            1,N,15,H,24,P,30,M,31,H,49,H,55,T,57,F,59,E,61,P,64,P,65,E,74,P,69,P,71,F,78,H,78,O,95,H,103,Q,135
+          </p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 3 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">15,U,17,N,16,S,25,T,75,H,35,U,60,U,65,G,70</p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 4 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">
+            100,A,100,A,115,A,119,A,144,A,145,A,157,A,158,A,171,A,179,A,194,A,206,A,207,A,227,A,229,A,231,A,234
+          </p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+        <!-- stage 5 -->
+        <div class="lvl-stage">
+          <p class="lvl-input">
+            100,C,100,C,115,C,119,C,121,C,144,C,154,C,157,G,158,C,171,C,179,C,194,C,206,C,214,C,227,C,229,C,231,C,298
+          </p>
+          <div class="lvl-output-wrapper">
+            <i class="check-off lvl-correct material-icons">check_circle</i>
+            <i class="check-off lvl-wrong material-icons">error</i>
+            <div class="lvl-output mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1" />
+              <label class="mdl-textfield__label" for="sample1">Output...</label>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- buttons -->
+      <div class="lvl-buttons">
+        <a
+          href="/results.html"
+          class="lvl-results m-16 big-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        >
+          <i class="material-icons">format_list_bulleted</i>
+          <span>Results</span>
+        </a>
+        <button
+          onclick="submitLevel()"
+          class="big-button m-16 mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        >
+          <i class="material-icons">assignment_turned_in</i>
+          <span class="bold">Submit</span>
+        </button>
+      </div>
+    </div>
+
     <!-- scripts -->
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./main.js"></script>
