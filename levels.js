@@ -35,11 +35,32 @@ function loadNickname(data) {
 }
 
 function updateLevel(data) {
-    if (level === 1) return;
-
     for (let i = 0; i < data.users.length; i++) {
         if (data.users[i].name === nickname) {
-            data.users[i].level = level;
+            // if finished already
+            if (data.users[i].end !== null) {
+                window.location.href = "./results.html";
+                return;
+            }
+
+            // if current level inferior 
+            if (data.users[i].level > level) {
+                window.location.href = `./level${data.users[i].level}.html`;
+                return;
+            }
+
+            // if current level equal
+            if (data.users[i].level === level) {
+                return;
+            }
+
+            if (getUrlParam('passed') === 'true') {
+                data.users[i].level = level;
+            }
+            else {
+                window.location.href = `./level${data.users[i].level}.html`;
+                return;
+            }
         }
     }
 
@@ -111,7 +132,7 @@ function submitLevel() {
             return;
         }
 
-        window.location.href = `./level${level + 1}.html`;
+        window.location.replace(`./level${level + 1}.html?passed=true`);
     }
 }
 

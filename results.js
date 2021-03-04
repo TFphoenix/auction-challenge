@@ -10,10 +10,12 @@ function checkIfFinalized(data) {
         const nickname = getUser();
 
         for (let i = 0; i < data.users.length; i++) {
-            if (data.users[i] === nickname) {
+            if (data.users[i].name === nickname) {
                 data.users[i].end = end;
             }
         }
+
+        writeData(data);
     }
 }
 
@@ -30,7 +32,7 @@ function populateResults(data) {
             duration = hms(seconds(user.end) - seconds(user.start));
         }
 
-        results[index++] = `${user.name} | Level: ${user.level} | Duration: ${duration}`;
+        results[index++] = `<pre>${user.name}   🎯Level: ${user.level}   ⏳Duration: ${duration}   🏁Finished: ${user.end !== null ? 'yes' : 'no'}</pre>`;
     });
 
 
