@@ -22,6 +22,9 @@ function loadUserSession(data) {
         return user.name === userNickname;
     })[0];
 
+    // new user
+    if (user === undefined) return;
+
     if (user.end !== null) {
         window.location.href = "./results.html";
         return;
