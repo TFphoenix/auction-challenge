@@ -75,6 +75,8 @@ body {
 /* Results */
 #results-list {
   min-width: 512px;
+  max-height: 512px;
+  overflow: auto;
 }
 
 /* Levels */
